@@ -1,0 +1,15 @@
+version: "3"
+services:
+  third-party-server:
+    restart: always
+    image: prochetankrishna/third-party-server:latest
+    ports:
+      - "8095:8095"
+    depends_on:
+      - third-party-mock-server
+  third-party-mock-server:
+    restart: always
+    image: prochetankrishna/third-party-mock-server:latest
+    ports:
+      - "8096:8096"
+
