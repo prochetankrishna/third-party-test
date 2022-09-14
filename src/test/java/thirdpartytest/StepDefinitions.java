@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StepDefinitions {
 
-    private static final String BASE_URI = "http://localhost:8095/api";
+    private static final String BASE_URI = "http://43.205.243.206:8095/api";
     private static RequestSpecification lookupRequestSpecification;
     private static Response lookUpResponse;
     @Given("Lookup Request is sent to Broker Service")
