@@ -1,15 +1,23 @@
-version: "3"
+version: "2"
+networks:
+  testing-network:
+    driver: bridge
 services:
   third-party-server:
     restart: always
     image: prochetankrishna/third-party-server:latest
     ports:
       - "8095:8095"
+    networks:
+      - testing-network
     depends_on:
+      - third-party-mock-server
+    links:
       - third-party-mock-server
   third-party-mock-server:
     restart: always
     image: prochetankrishna/third-party-mock-server:latest
     ports:
       - "8096:8096"
-
+    networks:
+      - testing-network
