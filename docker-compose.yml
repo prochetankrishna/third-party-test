@@ -8,8 +8,6 @@ services:
     network_mode: "host"
     depends_on:
       - third-party-mock-server
-    links:
-      - third-party-mock-server
   third-party-mock-server:
     restart: always
     image: prochetankrishna/third-party-mock-server:latest
